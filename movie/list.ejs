@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>My fancy movie database</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>title</th>
+        <th>year</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(let i = 0; i < movies.length; i++) {%>
+        <tr>
+          <td>
+            <%= movies[i].id %>
+          </td>
+          <td>
+            <%= movies[i].title %>
+          </td>
+          <td>
+            <%= movies[i].year %>
+          </td>
+          <td>
+            <a href="<%= baseUrl %>/delete/<%= movies[i].id %>">löschen</a>
+          </td>
+        </tr>
+        <%}%>
+    </tbody>
+  </table>
+  <a href="<%= baseUrl %>/form">Neu</a>
+</body>
+
+</html>
